@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
-import Home from '../containers/Home';
-import Profile from '../containers/Profile';
-import NavDrawer from '../components/NavDrawer';
+import { Route } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TicTacToe from '../containers/TicTacToe';
+import Profile from '../containers/Profile';
+import NavDrawer from '../components/NavDrawer';
+import {Header, Main} from '../components/styled/Templates';
 
 injectTapEventPlugin();
 
@@ -13,10 +14,13 @@ const createRoutes = () => {
     <MuiThemeProvider>
       <div>
         <NavDrawer />
-        <main>
-          <Route exact path="/" component={Home} />
+        <Header>
+          TicTacTuring
+        </Header>
+        <Main>
+          <Route exact path="/" component={TicTacToe} />
           <Route path="/profile" component={Profile} />
-        </main>
+        </Main>
       </div>
     </MuiThemeProvider>
   )
